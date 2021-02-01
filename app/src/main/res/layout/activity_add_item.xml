@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/add_item_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/add_item_radio_button_income"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/radiobutton_style"
+                android:button="@drawable/income"
+                android:checked="true"
+                android:fontFamily="@font/nanum_barunpen_b"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="수입"
+                android:textColor="@color/colorIncome" />
+
+            <RadioButton
+                android:id="@+id/add_item_radio_button_pay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/radiobutton_style"
+                android:button="@drawable/pay"
+                android:fontFamily="@font/nanum_barunpen_b"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="지출"
+                android:textColor="@color/colorPay" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/add_item_input_money"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="end"
+            android:inputType="number"
+            app:layout_constraintEnd_toStartOf="@id/add_item_won"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_item_radio_group"
+            android:fontFamily="@font/nanum_barunpen_r"/>
+
+        <TextView
+            android:id="@+id/add_item_won"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textColor="#000"
+            android:text="원"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/add_item_input_money"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_item_radio_group"
+            android:fontFamily="@font/nanum_barunpen_r"/>
+
+        <Button
+            android:id="@+id/add_item_add_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/submit_button"
+            android:text="등록"
+            android:fontFamily="@font/nanum_barunpen_r"
+            android:textColor="#FFF"
+            app:layout_constraintTop_toBottomOf="@+id/add_item_input_money" />
+
+        <Button
+            android:id="@+id/add_item_remove_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/delete_button"
+            android:textColor="#FFF"
+            android:fontFamily="@font/nanum_barunpen_r"
+            android:text="삭제"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/add_item_add_button" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
